@@ -43,8 +43,7 @@ model SessionHostManagementUpdateStatus {
   ...StatusProperty;
   ...UpdateStatusProperty;
 }
-
-@added(Versions.vLatestPreview)
+@introducedIn("2023-11-01-preview")@added(Versions.vLatestPreview)
 @armResourceOperations
 interface SessionHostManagementUpdateStatuses {
   /**
