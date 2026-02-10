@@ -4,7 +4,6 @@ import "@typespec/http";
 import "@azure-tools/typespec-azure-core";
 import "@azure-tools/typespec-azure-resource-manager";
 import "@azure-tools/typespec-client-generator-core";
-import "./decorators.js";
 
 using Azure.ResourceManager.Foundations;
 using Azure.ClientGenerator.Core;
@@ -1446,7 +1445,6 @@ model AppAttachPackageProperties {
   /**
    * Specific name of package owner, is "AppAttach" for native app attach packages
    */
-  @introducedIn("2024-03-06-preview")
   @added(Versions.vLatestPreview)
   packageOwnerName?: string;
 
@@ -1465,7 +1463,6 @@ model AppAttachPackageProperties {
   /**
    * DeploymentScope type for AppAttachPackage.
    */
-  @introducedIn("2025-08-01-preview")
   @added(Versions.vLatestPreview)
   deploymentScope?: DeploymentScope;
 }
@@ -1664,14 +1661,12 @@ model DiskInfoProperties {
   /**
    * The managed disk parameters.
    */
-  @introducedIn("2025-03-01-preview")
   @added(Versions.vLatestPreview)
   managedDisk?: ManagedDiskProperties;
 
   /**
    * Specifies the ephemeral disk settings for the operating system disk used by the virtual machine.
    */
-  @introducedIn("2025-03-01-preview")
   @added(Versions.vLatestPreview)
   diffDiskSettings?: DiffDiskProperties;
 }
@@ -2164,7 +2159,6 @@ model SessionHostManagementProperties {
   /**
    * Parameters that apply when session hosts are provisioned.
    */
-  @introducedIn("2023-10-04-preview")
   @added(Versions.vLatestPreview)
   provisioning?: SessionHostProvisioningConfigurationProperties;
 
@@ -2234,14 +2228,12 @@ model SessionHostManagementPatchProperties {
   /**
    * Parameters that apply when session hosts are provisioned.
    */
-  @introducedIn("2023-10-04-preview")
   @added(Versions.vLatestPreview)
   provisioning?: SessionHostProvisioningConfigurationPatchProperties;
 
   /**
    * The policy that should be applied when the Session Host provisioning operation fails.
    */
-  @introducedIn("2025-03-01-preview")
   @added(Versions.vLatestPreview)
   failedSessionHostCleanupPolicy?: FailedSessionHostCleanupPolicySHC;
 }
@@ -2307,7 +2299,6 @@ model ApplicationGroupProperties {
   /**
    * DeploymentScope type for ApplicationGroup.
    */
-  @introducedIn("2025-08-01-preview")
   @added(Versions.vLatestPreview)
   @visibility(Lifecycle.Read)
   deploymentScope?: DeploymentScope;
@@ -2624,21 +2615,18 @@ model HostPoolProperties {
   /**
    * The type of management for this hostpool, Automated or Standard. The default value is Automated.
    */
-  @introducedIn("2023-11-01-preview")
   @added(Versions.vLatestPreview)
   managementType?: ManagementType;
 
   /**
    * DeploymentScope type for HostPool.
    */
-  @introducedIn("2025-08-01-preview")
   @added(Versions.vLatestPreview)
   deploymentScope?: DeploymentScope;
 
   /**
    * Tenant that the resource is being requested on behalf of.
    */
-  @introducedIn("2025-08-01-preview")
   @added(Versions.vLatestPreview)
   oboTenantId?: string;
 
@@ -2853,14 +2841,12 @@ model ScalingSchedule {
   /**
    * The desired scaling method to be used to scale the hosts in the assigned host pool.
    */
-  @introducedIn("2024-11-01-preview")
   @added(Versions.vLatestPreview)
   scalingMethod?: ScalingMethodType = ScalingMethodType.PowerManage;
 
   /**
    * The properties that control how Scaling will manage the size of the hostpool by creating and deleting hosts.
    */
-  @introducedIn("2024-11-01-preview")
   @added(Versions.vLatestPreview)
   createDelete?: CreateDeleteProperties;
 
@@ -4622,15 +4608,15 @@ model ScalingPlanPooledScheduleProperties {
 
   /**
    * The desired scaling method to be used to scale the hosts in the assigned host pool.
+   * Introduced in version 2024-11-01-preview
    */
-  @introducedIn("2024-11-01-preview")
   @added(Versions.vLatestPreview)
   scalingMethod?: ScalingMethodType = ScalingMethodType.PowerManage;
 
   /**
    * The properties that control how Scaling will manage the size of the hostpool by creating and deleting hosts.
+   * Introduced in version 2024-11-01-preview
    */
-  @introducedIn("2024-11-01-preview")
   @added(Versions.vLatestPreview)
   createDelete?: CreateDeleteProperties;
 
@@ -4741,15 +4727,15 @@ model ScalingPlanPooledSchedulePatchProperties {
 
   /**
    * The desired scaling method to be used to scale the hosts in the assigned host pool.
+   * Introduced in version 2024-11-01-preview
    */
-  @introducedIn("2024-11-01-preview")
   @added(Versions.vLatestPreview)
   scalingMethod?: ScalingMethodType;
 
   /**
    * The properties that control how Scaling will manage the size of the hostpool by creating and deleting hosts.
+   * Introduced in version 2024-11-01-preview
    */
-  @introducedIn("2024-11-01-preview")
   @added(Versions.vLatestPreview)
   createDelete?: CreateDeleteProperties;
 

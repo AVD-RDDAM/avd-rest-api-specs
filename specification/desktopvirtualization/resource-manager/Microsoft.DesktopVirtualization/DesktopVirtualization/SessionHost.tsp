@@ -113,8 +113,8 @@ interface SessionHosts {
 
   /**
    * Retry provisioning on a SessionHost.
+   * Introduced in version 2023-11-01-preview
    */
-  @introducedIn("2023-11-01-preview")
   @added(Versions.vLatestPreview)
   retryProvisioning is ArmResourceActionSync<SessionHost, void, OkResponse>;
 

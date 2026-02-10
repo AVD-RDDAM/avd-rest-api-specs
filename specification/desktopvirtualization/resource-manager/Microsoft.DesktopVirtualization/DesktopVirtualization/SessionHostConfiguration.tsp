@@ -30,7 +30,9 @@ model SessionHostConfiguration
 }
 
 #suppress "@azure-tools/typespec-azure-resource-manager/no-resource-delete-operation" "Service doesn't allow delete"
-@introducedIn("2023-11-01-preview")
+/**
+ * Introduced in version 2023-11-01-preview
+ */
 @added(Versions.vLatestPreview)
 @armResourceOperations
 interface SessionHostConfigurations {
