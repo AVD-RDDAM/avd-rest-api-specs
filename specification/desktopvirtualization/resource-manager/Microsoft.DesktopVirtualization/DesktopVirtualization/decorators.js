@@ -7,15 +7,7 @@ const introducedInKey = Symbol.for("introducedIn");
  * @param version - The API version when this was introduced (e.g., "2023-11-01-preview")
  */
 export function $introducedIn(context, target, version) {
-  if (typeof version !== "string") {
-    context.program.reportDiagnostic({
-      code: "invalid-argument",
-      message: "Version must be a string",
-      target: target,
-    });
-    return;
-  }
-
+  // Store the version information in the program state
   context.program.stateMap(introducedInKey).set(target, version);
 }
 
