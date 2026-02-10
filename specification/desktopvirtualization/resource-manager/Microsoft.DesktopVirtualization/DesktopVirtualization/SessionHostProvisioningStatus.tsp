@@ -58,4 +58,3 @@ interface SessionHostManagementProvisioningStatuses {
   @action("sessionHostProvisioningStatuses/default")
   get is ArmResourceRead<SessionHostManagementProvisioningStatus>;
 }
-
