@@ -1,5 +1,3 @@
-import { $lib } from "@typespec/compiler";
-
 const introducedInKey = Symbol.for("introducedIn");
 
 /**
