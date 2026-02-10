@@ -29,9 +29,6 @@ model SessionHostManagement
     NamePattern = "^[A-Za-z0-9@.\\-_ ]*$"
   >;
 }
-/**
- * Introduced in version 2023-11-01-preview
- */
 @added(Versions.vLatestPreview)
 @armResourceOperations
 interface InitiateSessionHostUpdate {
@@ -52,9 +49,6 @@ interface InitiateSessionHostUpdate {
   >;
 }
 
-/**
- * Introduced in version 2023-11-01-preview
- */
 @added(Versions.vLatestPreview)
 @armResourceOperations
 interface ControlSessionHostUpdate {
@@ -68,9 +62,6 @@ interface ControlSessionHostUpdate {
   >;
 }
 
-/**
- * Introduced in version 2023-11-01-preview
- */
 @added(Versions.vLatestPreview)
 @armResourceOperations
 @tag("SessionHostManagement")
@@ -86,9 +77,6 @@ interface ControlSessionHostProvisioning {
 }
 
 #suppress "@azure-tools/typespec-azure-resource-manager/no-resource-delete-operation" "Service doesn't allow delete"
-/**
- * Introduced in version 2023-11-01-preview
- */
 @added(Versions.vLatestPreview)
 @armResourceOperations
 interface SessionHostManagements {

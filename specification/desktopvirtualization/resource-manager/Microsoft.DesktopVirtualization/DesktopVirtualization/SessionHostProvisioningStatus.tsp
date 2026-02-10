@@ -19,9 +19,6 @@ namespace Microsoft.DesktopVirtualization;
 #suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "Composition over inheritance"
 @parentResource(SessionHostManagement)
 @singleton("default")
-/**
- * Introduced in version 2023-11-01-preview
- */
 @added(Versions.vLatestPreview)
 model SessionHostManagementProvisioningStatus {
   /** Fully qualified ID for the async operation. */
@@ -49,9 +46,6 @@ model SessionHostManagementProvisioningStatus {
 }
 
 @armResourceOperations
-/**
- * Introduced in version 2023-11-01-preview
- */
 @added(Versions.vLatestPreview)
 @tag("SessionHostManagement")
 interface SessionHostManagementProvisioningStatuses {

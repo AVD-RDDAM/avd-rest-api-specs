@@ -4608,14 +4608,12 @@ model ScalingPlanPooledScheduleProperties {
 
   /**
    * The desired scaling method to be used to scale the hosts in the assigned host pool.
-   * Introduced in version 2024-11-01-preview
    */
   @added(Versions.vLatestPreview)
   scalingMethod?: ScalingMethodType = ScalingMethodType.PowerManage;
 
   /**
    * The properties that control how Scaling will manage the size of the hostpool by creating and deleting hosts.
-   * Introduced in version 2024-11-01-preview
    */
   @added(Versions.vLatestPreview)
   createDelete?: CreateDeleteProperties;
@@ -4727,14 +4725,12 @@ model ScalingPlanPooledSchedulePatchProperties {
 
   /**
    * The desired scaling method to be used to scale the hosts in the assigned host pool.
-   * Introduced in version 2024-11-01-preview
    */
   @added(Versions.vLatestPreview)
   scalingMethod?: ScalingMethodType;
 
   /**
    * The properties that control how Scaling will manage the size of the hostpool by creating and deleting hosts.
-   * Introduced in version 2024-11-01-preview
    */
   @added(Versions.vLatestPreview)
   createDelete?: CreateDeleteProperties;
