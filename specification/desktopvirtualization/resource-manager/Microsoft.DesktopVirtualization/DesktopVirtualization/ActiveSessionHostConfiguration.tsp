@@ -5,6 +5,7 @@ import "@typespec/rest";
 import "@typespec/versioning";
 import "./HostPool.tsp";
 import "./models.tsp";
+import "./decorators.js";
 
 using TypeSpec.Rest;
 using Azure.ResourceManager;

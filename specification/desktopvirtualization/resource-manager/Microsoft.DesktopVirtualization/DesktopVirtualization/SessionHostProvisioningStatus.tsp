@@ -5,6 +5,7 @@ import "@typespec/openapi";
 import "@typespec/rest";
 import "./models.tsp";
 import "./SessionHostManagement.tsp";
+import "./decorators.js";
 
 using TypeSpec.Rest;
 using Azure.ResourceManager;
@@ -60,4 +61,3 @@ interface SessionHostManagementProvisioningStatuses {
   @action("sessionHostProvisioningStatuses/default")
   get is ArmResourceRead<SessionHostManagementProvisioningStatus>;
 }
-

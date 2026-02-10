@@ -6,6 +6,7 @@ import "@typespec/rest";
 import "./models.tsp";
 import "./HostPool.tsp";
 import "./CustomOperations.tsp";
+import "./decorators.js";
 
 using TypeSpec.Rest;
 using Azure.ResourceManager;
@@ -29,7 +30,8 @@ model SessionHostManagement
     NamePattern = "^[A-Za-z0-9@.\\-_ ]*$"
   >;
 }
-@introducedIn("2023-11-01-preview")@introducedIn("2023-11-01-preview")
+@introducedIn("2023-11-01-preview")
+@introducedIn("2023-11-01-preview")
 @added(Versions.vLatestPreview)
 @armResourceOperations
 interface InitiateSessionHostUpdate {
