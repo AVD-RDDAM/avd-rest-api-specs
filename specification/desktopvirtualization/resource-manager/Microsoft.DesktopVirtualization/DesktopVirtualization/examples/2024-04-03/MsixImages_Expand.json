@@ -7,7 +7,7 @@
     "hostPoolName": "hostpool1",
     "api-version": "2024-04-03",
     "msixImageURI": {
-      "uri": "imagepath"
+      "uri": "/imagepath"
     }
   },
   "responses": {
@@ -20,7 +20,7 @@
             "type": "Microsoft.DesktopVirtualization/hostpools/expandmsiximage",
             "properties": {
               "packageAlias": "msixpackagealias",
-              "imagePath": "imagepath",
+              "imagePath": "/imagepath",
               "packageName": "MsixPackageName",
               "packageFamilyName": "MsixPackage_FamilyName",
               "packageFullName": "MsixPackage_FullName",
@@ -50,7 +50,7 @@
             "type": "Microsoft.DesktopVirtualization/hostpools/expandmsiximage",
             "properties": {
               "packageAlias": "msixpackagealias2",
-              "imagePath": "imagepath",
+              "imagePath": "/imagepath",
               "packageName": "MsixPackageName2",
               "packageFamilyName": "MsixPackage_FamilyName2",
               "packageFullName": "MsixPackage_FullName2",
