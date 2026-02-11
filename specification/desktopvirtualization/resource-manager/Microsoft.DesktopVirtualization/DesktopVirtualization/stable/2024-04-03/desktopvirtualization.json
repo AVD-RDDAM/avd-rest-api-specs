@@ -8011,11 +8011,6 @@
       "type": "object",
       "description": "A ScalingPlanPooledSchedule that can be patched.",
       "properties": {
-        "name": {
-          "type": "string",
-          "description": "Name of the ScalingPlanPooledSchedule",
-          "readOnly": true
-        },
         "daysOfWeek": {
           "type": "array",
           "description": "Set of days of the week on which this schedule is active.",
@@ -8106,11 +8101,6 @@
       "type": "object",
       "description": "A ScalingPlanPooledSchedule.",
       "properties": {
-        "name": {
-          "type": "string",
-          "description": "Name of the ScalingPlanPooledSchedule",
-          "readOnly": true
-        },
         "daysOfWeek": {
           "type": "array",
           "description": "Set of days of the week on which this schedule is active.",
