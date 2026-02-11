@@ -367,6 +367,12 @@ These settings apply only when `--tag=package-2024-04` is specified on the comma
 ```yaml $(tag) == 'package-2024-04'
 input-file:
   - stable/2024-04-03/desktopvirtualization.json
+suppressions:
+  - code: RequiredPropertiesMissingInResourceModel
+    from: desktopvirtualization.json
+    reason: Discussed in the ARM API office hour and get approved. Even Common type for operation result don't have the related properties. The rule seems conflict with the contract. https://github.com/Azure/azure-rest-api-specs/blob/main/specification/common-types/resource-management/v5/types.json#L270 and also https://github.com/Azure/azure-openapi-validator/pull/767#issuecomment-2732917683. There is a fix for this and is waiting for the rollout.
+    where:
+        - $.definitions.ResourceProviderOperationListResult
 ```
 
 ### Tag: package-preview-2024-03
