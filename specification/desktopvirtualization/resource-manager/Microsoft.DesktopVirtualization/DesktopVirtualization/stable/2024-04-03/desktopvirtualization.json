@@ -6465,8 +6465,7 @@
       "enum": [
         "BreadthFirst",
         "DepthFirst",
-        "Persistent",
-        "MultiplePersistent"
+        "Persistent"
       ],
       "x-ms-enum": {
         "name": "LoadBalancerType",
@@ -6486,11 +6485,6 @@
             "name": "Persistent",
             "value": "Persistent",
             "description": "Maintains persistent connections."
-          },
-          {
-            "name": "MultiplePersistent",
-            "value": "MultiplePersistent",
-            "description": "Maintains multiple persistents connections."
           }
         ]
       }
@@ -7679,7 +7673,7 @@
           "minimum": 0
         },
         "rampDownActionOnLogoff": {
-          "$ref": "#/definitions/SessionHandlingOperation",
+          "$ref": "#/definitions/SessionHandlingOperationWithHibernate",
           "description": "Action to be taken after a logoff during the ramp down period."
         },
         "rampDownMinutesToWaitOnLogoff": {
@@ -7718,7 +7712,7 @@
           }
         },
         "offPeakActionOnDisconnect": {
-          "$ref": "#/definitions/SessionHandlingOperation",
+          "$ref": "#/definitions/SessionHandlingOperationWithHibernate",
           "description": "Action to be taken after a user disconnect during the off-peak period."
         },
         "offPeakMinutesToWaitOnDisconnect": {
@@ -7728,7 +7722,7 @@
           "minimum": 0
         },
         "offPeakActionOnLogoff": {
-          "$ref": "#/definitions/SessionHandlingOperation",
+          "$ref": "#/definitions/SessionHandlingOperationWithHibernate",
           "description": "Action to be taken after a logoff during the off-peak period."
         },
         "offPeakMinutesToWaitOnLogoff": {
@@ -7892,7 +7886,7 @@
           "minimum": 0
         },
         "rampDownActionOnLogoff": {
-          "$ref": "#/definitions/SessionHandlingOperation",
+          "$ref": "#/definitions/SessionHandlingOperationWithHibernate",
           "description": "Action to be taken after a logoff during the ramp down period."
         },
         "rampDownMinutesToWaitOnLogoff": {
@@ -7931,7 +7925,7 @@
           }
         },
         "offPeakActionOnDisconnect": {
-          "$ref": "#/definitions/SessionHandlingOperation",
+          "$ref": "#/definitions/SessionHandlingOperationWithHibernate",
           "description": "Action to be taken after a user disconnect during the off-peak period."
         },
         "offPeakMinutesToWaitOnDisconnect": {
@@ -7941,7 +7935,7 @@
           "minimum": 0
         },
         "offPeakActionOnLogoff": {
-          "$ref": "#/definitions/SessionHandlingOperation",
+          "$ref": "#/definitions/SessionHandlingOperationWithHibernate",
           "description": "Action to be taken after a logoff during the off-peak period."
         },
         "offPeakMinutesToWaitOnLogoff": {
@@ -8213,8 +8207,7 @@
           "description": "HostPool type for desktop.",
           "default": "Pooled",
           "enum": [
-            "Pooled",
-            "Personal"
+            "Pooled"
           ],
           "x-ms-enum": {
             "name": "ScalingHostPoolType",
@@ -8224,11 +8217,6 @@
                 "name": "Pooled",
                 "value": "Pooled",
                 "description": "Users get a new (random) SessionHost every time it connects to the HostPool."
-              },
-              {
-                "name": "Personal",
-                "value": "Personal",
-                "description": "Users will be assigned a SessionHost either by administrators (PersonalDesktopAssignmentType = Direct) or upon connecting to the pool (PersonalDesktopAssignmentType = Automatic). They will always be redirected to their assigned SessionHost."
               }
             ]
           }
@@ -8391,11 +8379,35 @@
       "description": "Action to be taken after a user disconnect during the ramp up period.",
       "enum": [
         "None",
+        "Deallocate"
+      ],
+      "x-ms-enum": {
+        "name": "SessionHandlingOperation",
+        "modelAsString": true,
+        "values": [
+          {
+            "name": "None",
+            "value": "None",
+            "description": "No action will be taken after disconnect"
+          },
+          {
+            "name": "Deallocate",
+            "value": "Deallocate",
+            "description": "Session Host will be deallocated after disconnect"
+          }
+        ]
+      }
+    },
+    "SessionHandlingOperationWithHibernate": {
+      "type": "string",
+      "description": "Action to be taken after a user disconnect. Includes hibernate support for all versions.",
+      "enum": [
+        "None",
         "Deallocate",
         "Hibernate"
       ],
       "x-ms-enum": {
-        "name": "SessionHandlingOperation",
+        "name": "SessionHandlingOperationWithHibernate",
         "modelAsString": true,
         "values": [
           {

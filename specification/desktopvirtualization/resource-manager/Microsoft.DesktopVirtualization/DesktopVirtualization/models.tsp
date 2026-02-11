@@ -340,6 +340,7 @@ union LoadBalancerType {
   /**
    * Maintains multiple persistents connections.
    */
+  @added(Versions.vLatestPreview)
   MultiplePersistent: "MultiplePersistent",
 }
 
@@ -610,6 +611,7 @@ union ScalingHostPoolType {
   /**
    * Users will be assigned a SessionHost either by administrators (PersonalDesktopAssignmentType = Direct) or upon connecting to the pool (PersonalDesktopAssignmentType = Automatic). They will always be redirected to their assigned SessionHost.
    */
+  @added(Versions.vLatestPreview)
   Personal: "Personal",
 }
 
@@ -1130,6 +1132,28 @@ union SetStartVMOnConnect {
 }
 
 /**
+ * Action to be taken after a user disconnect. Includes hibernate support for all versions.
+ */
+union SessionHandlingOperationWithHibernate {
+  string,
+
+  /**
+   * No action will be taken after disconnect
+   */
+  None: "None",
+
+  /**
+   * Session Host will be deallocated after disconnect
+   */
+  Deallocate: "Deallocate",
+
+  /**
+   * Session Host will hibernate after disconnect
+   */
+  Hibernate: "Hibernate",
+}
+
+/**
  * Action to be taken after a user disconnect during the ramp up period.
  */
 union SessionHandlingOperation {
@@ -1148,6 +1172,7 @@ union SessionHandlingOperation {
   /**
    * Session Host will hibernate after disconnect
    */
+  @added(Versions.vLatestPreview)
   Hibernate: "Hibernate",
 }
 
@@ -4382,7 +4407,7 @@ model ScalingPlanPersonalScheduleProperties {
   /**
    * Action to be taken after a logoff during the ramp down period.
    */
-  rampDownActionOnLogoff?: SessionHandlingOperation;
+  rampDownActionOnLogoff?: SessionHandlingOperationWithHibernate;
 
   /**
    * The time in minutes to wait before performing the desired session handling action when a user logs off during the ramp down period.
@@ -4404,7 +4429,7 @@ model ScalingPlanPersonalScheduleProperties {
   /**
    * Action to be taken after a user disconnect during the off-peak period.
    */
-  offPeakActionOnDisconnect?: SessionHandlingOperation;
+  offPeakActionOnDisconnect?: SessionHandlingOperationWithHibernate;
 
   /**
    * The time in minutes to wait before performing the desired session handling action when a user disconnects during the off-peak period.
@@ -4415,7 +4440,7 @@ model ScalingPlanPersonalScheduleProperties {
   /**
    * Action to be taken after a logoff during the off-peak period.
    */
-  offPeakActionOnLogoff?: SessionHandlingOperation;
+  offPeakActionOnLogoff?: SessionHandlingOperationWithHibernate;
 
   /**
    * The time in minutes to wait before performing the desired session handling action when a user logs off during the off-peak period.
@@ -4530,7 +4555,7 @@ model ScalingPlanPersonalSchedulePatchProperties {
   /**
    * Action to be taken after a logoff during the ramp down period.
    */
-  rampDownActionOnLogoff?: SessionHandlingOperation;
+  rampDownActionOnLogoff?: SessionHandlingOperationWithHibernate;
 
   /**
    * The time in minutes to wait before performing the desired session handling action when a user logs off during the ramp down period.
@@ -4552,7 +4577,7 @@ model ScalingPlanPersonalSchedulePatchProperties {
   /**
    * Action to be taken after a user disconnect during the off-peak period.
    */
-  offPeakActionOnDisconnect?: SessionHandlingOperation;
+  offPeakActionOnDisconnect?: SessionHandlingOperationWithHibernate;
 
   /**
    * The time in minutes to wait before performing the desired session handling action when a user disconnects during the off-peak period.
@@ -4563,7 +4588,7 @@ model ScalingPlanPersonalSchedulePatchProperties {
   /**
    * Action to be taken after a logoff during the off-peak period.
    */
-  offPeakActionOnLogoff?: SessionHandlingOperation;
+  offPeakActionOnLogoff?: SessionHandlingOperationWithHibernate;
 
   /**
    * The time in minutes to wait before performing the desired session handling action when a user logs off during the off-peak period.
