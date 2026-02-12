@@ -96,6 +96,7 @@ interface SessionHosts {
       /**
        * The path to the VM.
        */
+      @added(Versions.vLatestPreview)
       @query("vmPath")
       @maxLength(1092)
       @minLength(3)

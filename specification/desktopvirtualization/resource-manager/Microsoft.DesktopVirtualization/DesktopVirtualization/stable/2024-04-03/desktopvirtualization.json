@@ -626,13 +626,6 @@
             "minLength": 3,
             "maxLength": 100,
             "pattern": "^[a-z0-9]([a-z0-9]|(-(?!-))){1,61}[a-z0-9]$"
-          },
-          {
-            "name": "force",
-            "in": "query",
-            "description": "Allows force delete",
-            "required": false,
-            "type": "boolean"
           }
         ],
         "responses": {
@@ -2828,16 +2821,6 @@
             "required": false,
             "type": "integer",
             "format": "int32"
-          },
-          {
-            "name": "vmPath",
-            "in": "query",
-            "description": "The path to the VM.",
-            "required": false,
-            "type": "string",
-            "minLength": 3,
-            "maxLength": 1092,
-            "pattern": "^[A-Z][a-z][0-9][@./-_ ]*$"
           }
         ],
         "responses": {
