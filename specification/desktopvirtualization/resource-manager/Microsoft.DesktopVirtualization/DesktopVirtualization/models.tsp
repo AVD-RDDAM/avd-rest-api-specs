@@ -3022,6 +3022,17 @@ model Time {
 }
 
 /**
+ * Request body for listing scoped registration tokens for a session host.
+ */
+@added(Versions.vLatestPreview)
+model ScopedRegistrationTokenProperties {
+  /**
+   * Expiration time of the registration token in UTC.
+   */
+  expirationTimeInUtc: utcDateTime;
+}
+
+/**
  * Scaling plan reference to hostpool.
  */
 model ScalingHostPoolReference {
