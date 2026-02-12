@@ -11387,11 +11387,13 @@
         "sessions": {
           "type": "integer",
           "format": "int32",
-          "description": "Number of sessions on SessionHost."
+          "description": "Number of sessions on SessionHost.",
+          "readOnly": true
         },
         "agentVersion": {
           "type": "string",
-          "description": "Version of agent on SessionHost."
+          "description": "Version of agent on SessionHost.",
+          "readOnly": true
         },
         "allowNewSession": {
           "type": "boolean",

@@ -3978,11 +3978,13 @@ model SessionHostProperties {
   /**
    * Number of sessions on SessionHost.
    */
+  @visibility(Lifecycle.Read)
   sessions?: int32;
 
   /**
    * Version of agent on SessionHost.
    */
+  @visibility(Lifecycle.Read)
   agentVersion?: string;
 
   /**
