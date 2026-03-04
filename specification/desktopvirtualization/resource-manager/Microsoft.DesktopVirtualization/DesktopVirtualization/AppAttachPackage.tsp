@@ -105,7 +105,9 @@ interface AppAttachMsixFile {
   expand is ArmResourceActionAsync<
     AppAttachPackage,
     ExpandMsixFileRequest,
-    ExpandMsixFileResult
+    ArmResponse<ExpandMsixFileResult> & ArmAsyncOperationHeader,
+    LroHeaders = ArmCombinedLroHeaders<FinalResult = ExpandMsixFileResult> &
+      Azure.Core.Foundations.RetryAfterHeader
   >;
 }
 
