@@ -5459,6 +5459,11 @@ model ExpandMsixFileRequestProperties {
    * The output file type for the expanded MSIX file.
    */
   outputFileType?: OutputFileType;
+
+  /**
+   * The ARM path of the host pool where the MSIX package is being expanded. This is used to determine the region where the expanded files will be stored.
+   */
+  hostpoolArmPath?: string;
 }
 
 /**
