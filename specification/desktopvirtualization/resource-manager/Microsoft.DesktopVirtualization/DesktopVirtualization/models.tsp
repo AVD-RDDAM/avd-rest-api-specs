@@ -2487,6 +2487,12 @@ model HostPoolProperties {
   customRdpProperty?: string;
 
   /**
+   * Conditional rdp property of HostPool. Serialized string in the format of <rdPropertyName>:<type>:<value>:<ConditionType>:<ConditionValue>.
+   */
+  @added(Versions.v2026_03_01_preview)
+  conditionalRdpProperty?: string;
+
+  /**
    * The max session limit of HostPool.
    */
   maxSessionLimit?: int32;
@@ -3551,6 +3557,12 @@ model HostPoolPatchProperties {
    * Custom rdp property of HostPool.
    */
   customRdpProperty?: string;
+
+  /**
+   * Conditional rdp property of HostPool. Serialized string in the format of <rdPropertyName>:<type>:<value>:<ConditionType>:<ConditionValue>.
+   */
+  @added(Versions.v2026_03_01_preview)
+  conditionalRdpProperty?: string;
 
   /**
    * The max session limit of HostPool.
